@@ -11,12 +11,12 @@ from models import create_tables, Users, PersonalDict, EnglishDict
 print('Start telegram bot...')
 
 state_storage = StateMemoryStorage()
-token_bot = '8540626175:AAEmgeCgzxOsz3Dn_loRfVDgHIUZVUVJAmw'
+token_bot = ''
 bot = TeleBot(token_bot, state_storage=state_storage)
 
 buttons = []
 
-DSN = 'postgresql://postgres:htpZf3Jo3@localhost:5432/englishlessons'
+DSN = 'postgresql://postgres:postgres@localhost:5432/englishlessons'
 engine = sqlalchemy.create_engine(DSN)
 Session = sessionmaker(bind=engine)
 create_tables(engine)
